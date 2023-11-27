@@ -22,7 +22,7 @@ jobs:
           gradle-home-cache-cleanup: true
 
       - name: Build and verify
-        run: ./gradlew clean buildPlugin test verifyPlugin verifypluginconfiguration -PpluginVerifyProductDescriptor=true -PpluginIdeaVersion=${{ matrix.ij }} --warning-mode all
+        run: ./gradlew clean buildPlugin test verifyPlugin verifypluginconfiguration -PpluginVerifyProductDescriptor=true -PpluginIdeaVersion=${{ matrix.ij }} --warning-mode all -PpluginNeedsLicense=false
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v2
