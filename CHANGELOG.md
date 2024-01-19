@@ -1,5 +1,8 @@
 # Extra Icons Change Log
 
+## 2024.2.3 (WIP)
+* support `CODE_OF_CONDUCT` files (with `.md`, `.adoc`, `.txt`, `.rst` or no extension).
+
 ## 2024.2.2 (2024/01/18)
 * fix `java.lang.IllegalArgumentException: Illegal character in path at index 8` errors when loading user icons with IntelliJ 2024.1 EAP on Windows.
 * minor performance improvements.
