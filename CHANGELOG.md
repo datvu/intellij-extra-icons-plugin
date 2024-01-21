@@ -1,22 +1,8 @@
 # Extra Icons Change Log
 
-## 2024.2.3 (WIP)
-* support `CODE_OF_CONDUCT` files (with `.md`, `.adoc`, `.txt`, `.rst` or no extension).
-* don't throw an IDE error when failed to import/export/uninstall a user icon pack. Show a standard Swing error dialog instead.
-* internal: replace some custom dialogs by standard Swing dialogs.
-
-## 2024.2.2 (2024/01/18)
-* fix `java.lang.IllegalArgumentException: Illegal character in path at index 8` errors when loading user icons with IntelliJ 2024.1 EAP on Windows.
-* minor performance improvements.
-* make loggers less verbose and rework some error messages.
-
-## 2024.2.1 (2024/01/15)
-* optimize icons size, reducing plugin's weight.
+## 2024.1.2 (WIP)
+* optimize icons size by ~3% with SVGO 3.2.0.
 * fix [#176](https://github.com/jonathanlermitage/intellij-extra-icons-plugin/issues/176): clicking 'Go to Extra Icons settings' from the notification just throws an error.
-* remove Gateway support. This now allows me to reintroduce some UI enhancements (like regex colouring in regex text fields), improve icons override in VCS dialogs, reduce plugin's weight by removing libraries that were needed by Gateway (and because they could also interfere with libraries bundled with IDE). [See details online](https://plugins.jetbrains.com/plugin/11058-extra-icons/gateway-support).
-* minor performance improvements.
-* improve licensing management.
-* internal: important improvements to the plugin build script.
 
 ## 2024.1.1 (2024/01/02)
 * **INFO**: JetBrains will introduce a new business model for paid/freemium plugins. This model will offer a perpetual license, **allowing users to make a one-time payment for the plugin and use it for a lifetime**. [Get more information here](https://github.com/jonathanlermitage/intellij-extra-icons-plugin/blob/master/docs/LICENSE_FAQ.md#how-to-get-a-lifetime-license). There is no ETA yet.
@@ -83,7 +69,7 @@
 
 ## 2023.2.11-231 (2023/09/18)
 * fix [156](https://github.com/jonathanlermitage/intellij-extra-icons-plugin/issues/156): important rework of SVG user icons scaling. Most icons should no longer be blurry. Only small SVG icons (with `width` or `height` attributes < 16) will be blurry. For these icons, you are invited to rework them and set higher `width` and `height` values (ideally 16). **Reminder**: if the operating system's **fractional scaling** is activated, please go to plugin's settings, *Advanced* tab, then adjust the *Additional UI Scale Factor* value (ex: for a 125% global scale factor, set it to 1.25). [See details here](https://github.com/jonathanlermitage/intellij-extra-icons-plugin/issues/156#issuecomment-1722545407).
-* remove JSVG from dependencies. SVG icons are now handled by JetBrains API directly, which uses its own version of JSVG.
+* remove JSVG from dependencies. SVG icons are now handled by JetBrains API directly, which uses its own version of JSVG. 
 * improve Markdown icon.
 * rework Authors, Asciidoc, Bamboo, Berkshelf, Contact icons in order to make them compatible with Gateway.
 
@@ -171,7 +157,7 @@
 * created a downloadable [Icon Pack](https://github.com/jonathanlermitage/intellij-extra-icons-plugin/blob/master/themes/THEMES.md#downloadable-icon-packs) which restores some old file and folder icons in the new UI.
 * implement [#118](https://github.com/jonathanlermitage/intellij-extra-icons-plugin/issues/118): add a custom error reporter which prefills an issue on Extra Icons' GitHub repository.
 * fix editor tabs icon reloading on config change.
-* fix [#125](https://github.com/jonathanlermitage/intellij-extra-icons-plugin/issues/125): custom icon type errors after enabling Chinese UI. Thanks **Elziy** for helping!
+* fix [#125](https://github.com/jonathanlermitage/intellij-extra-icons-plugin/issues/125): custom icon type errors after enabling Chinese UI. Thanks **Elziy** for helping!  
 * fix [#120](https://github.com/jonathanlermitage/intellij-extra-icons-plugin/issues/120): minor UI improvement.
 * nota: issue [#121](https://github.com/jonathanlermitage/intellij-extra-icons-plugin/issues/121) "Slow operations are prohibited on EDT" fix will be shipped with 2023.2.2 plugin release, as it requires IDE 2023.1. I wanted to support old IDEs in 2023.2.1 plugin release. This issue occurs mainly in EAP and RC IDE builds, and you will find a safe workaround [here](https://plugins.jetbrains.com/plugin/11058-extra-icons/errors-workarounds).
 * improve Chinese UI translation. Thanks **Gerry** for helping!
@@ -547,7 +533,7 @@ Thx [Alan Bouteiller](https://github.com/bouteillerAlan) for his contributions:
 * provide an alternative icon for Contribution files.
 
 ## 1.39.0 (2020/10/30)
-* support [Mockk](https://mockk.io/#settings-file) `io/mockk/settings.properties` files.
+* support [Mockk](https://mockk.io/#settings-file) `io/mockk/settings.properties` files. 
 * support [gradle-intellij-plugin](https://github.com/JetBrains/gradle-intellij-plugin) `idea-sandbox` folders.
 * internal: improve Gradle build performance.
 * internal: migrate Gradle build to Kotlin DSL.
@@ -676,7 +662,7 @@ Some icons come from the [Hiberbee Theme family](https://github.com/hiberbee/jet
 ## 1.27.0 (2020/05/15)
 * support `svgo.yml` files.
 * optimized SVG logos with [SVGO](https://github.com/svg/svgo).
-* fix [issue 35](https://github.com/jonathanlermitage/intellij-extra-icons-plugin/issues/35): clarify usage of regex.
+* fix [issue 35](https://github.com/jonathanlermitage/intellij-extra-icons-plugin/issues/35): clarify usage of regex. 
 * support some [RST](https://en.wikipedia.org/wiki/ReStructuredText) files: `README.rst`, `CHANGELOG.rst`, etc.
 * support `.run` folder used by IntelliJ IDEA 2020+ to store Run/Debug Configurations.
 * support [Draw.io](https://app.diagrams.net) `.drawio` and `.dio` files.
@@ -826,7 +812,7 @@ Thx [Florian Böhm](https://github.com/jonathanlermitage/intellij-extra-icons-pl
 ## 1.3.0 (2019/04/24)
 * support Microsoft Azure `azure-pipelines.yml` files.
 * support Dependabot `.dependabot/config.yml` files and `.dependabot` folders.
-* fix: Windows `mvnw.bat`, `mvnw.cmd` and Linux `mvnw` files were registered with the same id. That means disabling Windows icons disabled Linux icon too.
+* fix: Windows `mvnw.bat`, `mvnw.cmd` and Linux `mvnw` files were registered with the same id. That means disabling Windows icons disabled Linux icon too. 
 
 ## 1.2.0 (2019/04/12)
 * improve file detection capabilities: can work with folders.
@@ -873,9 +859,9 @@ Thx [Florian Böhm](https://github.com/jonathanlermitage/intellij-extra-icons-pl
 
 ## 0.19 and 0.20 (2018/12/21)
 * starting from 0.19, there are two builds:
-    * odd minor revision number (0.19, 0.21, 1.1, 1.3...): compatible with 173.0 IDE builds (aka 2017.3). This build doesn't bundle features that need 2018.3 IDE builds: AngularJS, SASS, Javascript. They're excluded because Extra Icons plugin reads project's type in order to activate some file recognition (AngularJS, SASS, Javascrip): it is based on 2018.3 IDE features. Other files detection is simply based on files pattern, that's why it works with older IDE builds, and I will maintain a branch (`ide173`) to keep support.
-    * even minor revision number (0.20, 0.22, 1.0, 1.2...): compatible with latest IDE builds (183.0, aka 2018.3).
-
+  * odd minor revision number (0.19, 0.21, 1.1, 1.3...): compatible with 173.0 IDE builds (aka 2017.3). This build doesn't bundle features that need 2018.3 IDE builds: AngularJS, SASS, Javascript. They're excluded because Extra Icons plugin reads project's type in order to activate some file recognition (AngularJS, SASS, Javascrip): it is based on 2018.3 IDE features. Other files detection is simply based on files pattern, that's why it works with older IDE builds, and I will maintain a branch (`ide173`) to keep support.
+  * even minor revision number (0.20, 0.22, 1.0, 1.2...): compatible with latest IDE builds (183.0, aka 2018.3).
+  
 This way, you simply have to download the latest version offered by the plugin manager: on older IDE, you'll get the latest odd minor revision number. On recent IDE, you get the latest even minor revision number that sheeps same features as odd version, plus features that comes with recent IDE builds.
 
 ## 0.18 (2018/12/10)
@@ -905,7 +891,7 @@ This way, you simply have to download the latest version offered by the plugin m
 * detect more Docker and Docker Compose files.
 * detect more Jenkins files.
 * support [Zappr](https://zappr.opensource.zalan.do) `.zappr.yaml` files.
-* support [Codecov](https://docs.codecov.io/docs/codecov-yaml) `codecov.yml`, `.codecov.yml` files.
+* support [Codecov](https://docs.codecov.io/docs/codecov-yaml) `codecov.yml`, `.codecov.yml` files. 
 * support `.dockerignore` files.
 
 ## 0.12 (2018/10/10)
