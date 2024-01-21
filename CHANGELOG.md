@@ -2,7 +2,7 @@
 
 ## 2024.2.3 (WIP)
 * support `CODE_OF_CONDUCT` files (with `.md`, `.adoc`, `.txt`, `.rst` or no extension).
-* don't throw an IDE error when failed to import/export/uninstall a user icon pack. Show a standard error dialog instead.
+* don't throw an IDE error when failed to import/export/uninstall a user icon pack. Show a standard Swing error dialog instead.
 * internal: replace some custom dialogs by standard Swing dialogs.
 
 ## 2024.2.2 (2024/01/18)
